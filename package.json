@@ -31,7 +31,7 @@
     "cy:open": "cypress open",
     "lint": "eslint . --cache --cache-location node_modules/.cache/eslint",
     "validate": "concurrently --names \"lint,test:run,test:e2e\" --prefix \"[{name}]\" --prefix-colors \"bgGreen.reset.bold,bgBlue.reset.bold,bgRed.reset.bold\" \"npm run lint --silent\" \"npm run test:run --silent\" \"npm run test:e2e:run --silent\"",
-    "precommit": "lint-staged && npm run --silent validate",
+    "precommit": "lint-staged && npm run --silent validate --no-verify",
     "clean": "rimraf node_modules ./shared/node_modules ./client/node_modules ./server/node_modules ./other/configuration/calculator/node_modules ./other/configuration/calculator.solution/node_modules",
     "setup": "node ./scripts/verify && node ./scripts/install && npm run validate && node ./scripts/autofill-feedback-email.js"
   },
@@ -62,7 +62,7 @@
     "lodash.omit": "4.5.0",
     "node": "8.9.4",
     "npm-run-all": "4.1.2",
-    "prettier": "1.12.0",
+    "prettier": "^2.8.4",
     "react": "16.3.1",
     "react-dom": "16.3.1",
     "react-test-renderer": "16.3.1",
